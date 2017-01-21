@@ -103,6 +103,9 @@ namespace Task_2
             if (filePath == null)
                 throw new ArgumentNullException("File path is null.");
 
+            if (File.Exists(filePath) == false)
+                throw new FileNotFoundException("File not found with filepath: " + filePath);
+
             FileInfo fileInfo = new FileInfo(filePath);
             FileAttributes fileAttributes = File.GetAttributes(filePath);
             AuthorizationRuleCollection accessRules = null;
