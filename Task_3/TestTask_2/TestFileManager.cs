@@ -1,10 +1,12 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Task_2;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Security.AccessControl;
+
+using Task_2.Models;
+using Task_2.Logic;
 
 namespace TestTask_2
 {

@@ -1,0 +1,69 @@
+﻿@model  List<Task_2.Models.FileData>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Files Metadata</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        th {
+            width: 17%;
+        }
+
+        td {
+            word-wrap: break-word;
+        }
+    </style>
+
+</head>
+<body>
+    @if (Model.Count == 0)
+    {
+        <h3>Brak plików w podanym katalogu. </h3>
+
+    }
+    else
+    {
+        <h3>Pliki w "@(Model[0].FileInfo.Directory)": </h3>
+        @foreach (var item in Model)
+        {
+
+        <table>
+            <tr>
+                <th>Ścieżka:</th>
+                <td>@item.FileInfo.FullName</td>
+            </tr>
+            <tr>
+                <th>Utworzenie:</th>
+                <td>@item.FileInfo.CreationTime</td>
+            </tr>
+            <tr>
+                <th>Ostatni dostęp:</th>
+                <td>@item.FileInfo.LastAccessTime</td>
+            </tr>
+            <tr>
+                <th>Ostatni zapis:</th>
+                <td>@item.FileInfo.LastWriteTime</td>
+            </tr>
+            <tr>
+                <th>Plik jest ukryty:</th>
+                <td>@item.IsHidden</td>
+            </tr>
+            <tr>
+                <th>Tylko do odczytu:</th>
+                <td>@item.IsReadOnly</td>
+            </tr>
+        </table>
+        }
+    }
+</body>
+</html>

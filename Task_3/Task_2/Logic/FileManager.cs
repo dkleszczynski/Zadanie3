@@ -4,8 +4,9 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Security.AccessControl;
 using System.Collections.Generic;
+using Task_2.Models;
 
-namespace Task_2
+namespace Task_2.Logic
 {
     /// <summary>
     /// Contains methods connected with managing files.
@@ -106,6 +107,9 @@ namespace Task_2
             FileInfo fileInfo = new FileInfo(filePath);
             FileAttributes fileAttributes = File.GetAttributes(filePath);
             AuthorizationRuleCollection accessRules = null;
+
+            if ((fileAttributes & FileAttributes.Directory) == FileAttributes.Directory)
+                throw new Exception("FilePath leads to directory instead of file.");
 
             try
             {

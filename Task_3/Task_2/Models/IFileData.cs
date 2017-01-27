@@ -4,7 +4,7 @@ using System.IO;
 using System.Security.AccessControl;
 using System.Text;
 
-namespace Task_2
+namespace Task_2.Models
 {
      public interface IFileData
     {
@@ -12,6 +12,6 @@ namespace Task_2
 
         AuthorizationRuleCollection AccessRules { get; }
 
-        bool GetFileAttribute(FileAttributes fileAttribute);
+        
     }
 }

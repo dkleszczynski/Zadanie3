@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Security.AccessControl;
 
-using Task_2;
+using Task_2.Models;
 
 namespace TestTask_2
 {
@@ -35,7 +35,7 @@ namespace TestTask_2
             bool expected = true;
 
             //Act
-            bool actual = fd.GetFileAttribute(System.IO.FileAttributes.Hidden);
+            bool actual = fd.IsHidden;
 
             //Assert
             Assert.AreEqual(expected, actual);

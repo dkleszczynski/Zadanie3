@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Task_2
+namespace Task_2.Logic
 {
     /// <summary>
     /// Exception for detection of incorrect path syntax with Regex.

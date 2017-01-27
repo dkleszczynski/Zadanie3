@@ -1,0 +1,57 @@
+﻿@model Task_2.Models.FileData
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>File Metadata</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        th {
+            width: 17%;
+        }
+
+        td {
+            word-wrap: break-word;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Dane o pliku @(Model.FileInfo.Name): </h3>
+    <table>
+        <tr>
+            <th>Ścieżka:</th>
+            <td>@Model.FileInfo.FullName</td>
+        </tr>
+        <tr>
+            <th>Utworzenie:</th>
+            <td>@Model.FileInfo.CreationTime</td>
+        </tr>
+        <tr>
+            <th>Ostatni dostęp:</th>
+            <td>@Model.FileInfo.LastAccessTime</td>
+        </tr>
+        <tr>
+            <th>Ostatni zapis:</th>
+            <td>@Model.FileInfo.LastWriteTime</td>
+        </tr>
+        <tr>
+            <th>Plik jest ukryty:</th>
+            <td>@Model.IsHidden</td>
+        </tr>
+        <tr>
+            <th>Tylko do odczytu:</th>
+            <td>@Model.IsReadOnly</td>
+        </tr>
+    </table>
+</body>
+</html>
